@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context antiJARLocking="true" path="/Authentication">
-    <Valve className="org.apache.catalina.authenticator.FormAuthenticator" landingPage="/login"/>
+    <Valve className="org.apache.catalina.authenticator.FormAuthenticator" landingPage="/protected/welcome.html"/>
     <Resource name="jdbcResource"
             type="javax.sql.DataSource"
             factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
