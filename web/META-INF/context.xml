@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/Authentication">
+    <Valve className="org.apache.catalina.authenticator.FormAuthenticator" landingPage="/login"/>
+    <Resource name="jdbcResource"
+            type="javax.sql.DataSource"
+            factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+            driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://127.0.0.1:3306/auth"
+            username="root"
+            password="root"
+            maxActive="8" 
+            maxIdle="4" 
+            maxWait="10000"
+            auth="Container"
+    />
+
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+         dataSourceName="jdbcResource"
+         userTable="users" 
+         userNameCol="user" 
+         userCredCol="pass"
+         userRoleTable="roles" 
+         roleNameCol="role"
+         localDataSource="true"/>
+</Context>
